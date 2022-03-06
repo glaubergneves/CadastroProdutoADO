@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroProduto.Api", "CadastroProduto.Api\CadastroProduto.Api.csproj", "{E32991DC-CB63-4FE6-B0C7-5CBA7B3E4A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura", "Infraestrutura\Infraestrutura.csproj", "{1999A36A-8F1E-4B12-8F6D-9F55E1296880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E32991DC-CB63-4FE6-B0C7-5CBA7B3E4A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32991DC-CB63-4FE6-B0C7-5CBA7B3E4A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32991DC-CB63-4FE6-B0C7-5CBA7B3E4A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32991DC-CB63-4FE6-B0C7-5CBA7B3E4A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1999A36A-8F1E-4B12-8F6D-9F55E1296880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1999A36A-8F1E-4B12-8F6D-9F55E1296880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1999A36A-8F1E-4B12-8F6D-9F55E1296880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1999A36A-8F1E-4B12-8F6D-9F55E1296880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {696D1412-0433-409E-BA50-1148B779C4CE}
+	EndGlobalSection
+EndGlobal
