@@ -1,4 +1,5 @@
-﻿using CadastroProduto.Api.Models;
+﻿using CadastroProduto.Api.Dtos;
+using CadastroProduto.Api.Models;
 using CadastroProduto.Api.Repository;
 
 namespace CadastroProduto.Api.Services
@@ -11,7 +12,7 @@ namespace CadastroProduto.Api.Services
             _produtoRepository = produtoRepository;
         }
 
-        public IEnumerable<Produto> ObterProdutos()
+        public IEnumerable<ConsultaProdutoDto> ObterProdutos()
         {
             return _produtoRepository.Listar();
         }
@@ -19,6 +20,26 @@ namespace CadastroProduto.Api.Services
         public Produto? ObterProdutoPorId(long id)
         {
             return _produtoRepository.ObterPorId(id);
+        }
+
+        public void GravarProduto(Produto produto)
+        {
+            _produtoRepository.Gravar(produto);
+        }
+
+        public void AtualizarProduto(Produto produto)
+        {
+            _produtoRepository.Atualizar(produto);
+        }
+
+        internal void DeletarProduto(long id)
+        {
+            _produtoRepository.Deletar(id);
+        }
+
+        internal void DesabilitarProduto(long id)
+        {
+            _produtoRepository.Desabilitar(id);
         }
     }
 }
