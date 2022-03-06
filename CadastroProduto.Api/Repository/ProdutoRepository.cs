@@ -29,6 +29,8 @@ namespace CadastroProduto.Api.Repository
 
                     produtos.Add(produto);
                 }
+
+                sqlConnection.Close();
             }
 
             return produtos;
@@ -36,13 +38,26 @@ namespace CadastroProduto.Api.Repository
 
         public Produto? ObterPorId(long id)
         {
-            var produtos = new List<Produto>
+            Produto produto = null;
+
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                new Produto(0, "farinha"),
-                new Produto(1, "Açucar"),
-                new Produto(id:2, descricao:"Sal")
-            };
-            Produto? produto = produtos.FirstOrDefault(x => x.Id == id);
+                var sql = @"Select Id, Descricao from produto where id = @id";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlCon);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                sqlCon.Open();
+
+                var sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    produto = new Produto(Convert.ToInt64(sdr["Id"]), sdr["Descricao"].ToString());
+                }
+                sqlCon.Close();
+            }
 
             return produto;
         }
